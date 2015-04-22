@@ -34,7 +34,7 @@ def main():
     new_data = parse(MY_FILE, "'")
      
      # View how the data looks like
-     print new_data
+    print new_data
      
 if __name__ == "__main__": # only true when running parse.py from command line
     main() # main() will not be called when importing function parse() function
