@@ -8,12 +8,23 @@ def parse(raw_file, delimeter):
     """Parses a raw CSV file to a JSON-like object."""
     
     # Open CSV file
+    opened_file = open(raw_file)
     
     # Read CSV file
-    
-    # Close CSV file
+    csv_data = csv.reader(opened_file, delimeter=delimeter) # csv_data is a generator
     
     # Build a data structure to return parsed data
+    parsed_data = [] # setup an empty list
+    
+    fields = csv_data.next() # get column headers on first row
+    
+    # loop over the rows in csv_data
+    for row in csv_data:
+        # append dictionary of each row after mapping corresponding header and value
+        parsed_data.append(dict(zip(fields, row)))
+      
+    # Close CSV file
+    opened_file.close()
     
     # Return parsed data    
     return parsed_data 
