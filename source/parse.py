@@ -31,7 +31,7 @@ def parse(raw_file, delimiter):
 
 def main():
      # Call our parse function and give it required parameters
-    new_data = parse(MY_FILE, "'")
+    new_data = parse(MY_FILE, ",")
      
      # View how the data looks like
     print new_data
