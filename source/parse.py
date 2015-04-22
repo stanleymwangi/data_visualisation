@@ -11,7 +11,7 @@ def parse(raw_file, delimeter):
     opened_file = open(raw_file)
     
     # Read CSV file
-    csv_data = csv.reader(opened_file, delimeter=delimeter) # csv_data is a generator
+    csv_data = csv.reader(opened_file, delimiter=delimiter) # csv_data is a generator
     
     # Build a data structure to return parsed data
     parsed_data = [] # setup an empty list
