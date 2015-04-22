@@ -28,4 +28,13 @@ def parse(raw_file, delimeter):
     
     # Return parsed data    
     return parsed_data 
-    
+
+def main():
+     # Call our parse function and give it required parameters
+    new_data = parse(MY_FILE, "'")
+     
+     # View how the data looks like
+     print new_data
+     
+if __name__ == "__main__": # only true when running parse.py from command line
+    main() # main() will not be called when importing function parse() function
