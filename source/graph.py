@@ -7,7 +7,7 @@ import numpy as np
 
 import parse as prs 
 
-data_file = prs.parse(MY_FILE, ",")
+data_file = prs.parse(prs.MY_FILE, ",")
 
 def visualize_days(parsed_data):
     """Visualize data by day of week"""
