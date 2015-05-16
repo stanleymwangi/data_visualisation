@@ -40,8 +40,42 @@ def visualize_days(parsed_data):
     # Close the plot file
     plt.clf()
     
+def visualize_type(parsed_data):
+    """"Visualize data by category in a bar graph"""
+    
+    # Count how many incidents occur by category
+    counter = Counter(item["Category"] for item in parsed_data)
+    
+    # Obtain category labels
+    labels = tuple(counter.keys())
+    
+    # Set label locations (for helping with tick placement)
+    xlocations = np.arange(len(labels)) + 0.5
+    
+    # Set width of each bar
+    width = 0.5
+    
+    # Assign (y-axis) data to a bar chart
+    plt.bar(xlocations, counter.values(), width=width)
+    
+    # Assign (x-axis) labels and tick locations
+    plt.xticks(xlocations + width / 2, labels, rotation=90)
+    
+    # Increase room for labels to avoid cut off
+    plt.subplots_adjust(bottom=0.4)
+    
+    # Make the graph larger
+    plt.rcParams["figure.figsize"] = 12, 8
+    
+    # Save the graph
+    plt.savefig("Type.png")
+    
+    # Close plot file
+    plt.clf()
+    
 def main():
     visualize_days(data_file)
+    visualize_type(data_file)
     
 if __name__ == "__main__":
     main()
